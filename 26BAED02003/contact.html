@@ -1,0 +1,451 @@
+
+<?php
+/*
+Template Name: Uganda Martyrs University Contact Page
+*/
+
+get_header();
+?>
+
+<style>
+/* GENERAL STYLING */
+.umu-contact {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 15px;
+}
+
+/* HEADER */
+.umu-contact .custom-header {
+    background: #ff9999;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 15px;
+}
+
+.umu-contact .logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.umu-contact .header-title {
+    flex: 1;
+}
+
+.umu-contact .header-title h1 {
+    color: black;
+    margin: 5px;
+    font-size: 26px;
+}
+
+.umu-contact .contact {
+    font-size: 15px;
+    color: black;
+}
+
+.umu-contact .search {
+    display: flex;
+    gap: 5px;
+}
+
+.umu-contact .search input {
+    padding: 9px;
+    border: 1px solid #ccc;
+}
+
+.umu-contact .search button {
+    padding: 9px 15px;
+    background: #006633;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* NAVIGATION */
+.umu-contact nav {
+    background: #006633;
+}
+
+.umu-contact .sidenav {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.umu-contact .sidenav li a {
+    display: block;
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+}
+
+.umu-contact .sidenav li a:hover,
+.umu-contact .sidenav li a.active {
+    background: #ffcc00;
+    color: black;
+}
+
+/* MAIN CONTENT */
+.umu-contact main {
+    padding: 20px;
+}
+
+.umu-contact .article {
+    background: #006633;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+.umu-contact .container {
+    text-align: center;
+    padding: 25px;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.umu-contact .container h1 {
+    color: #006633;
+}
+
+/* CONTACT INFORMATION */
+.umu-contact .contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.umu-contact .info-card {
+    background: white;
+    padding: 22px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 7px rgba(0,0,0,0.12);
+}
+
+.umu-contact .info-card h2,
+.umu-contact .info-card h3 {
+    color: #006633;
+}
+
+.umu-contact .info-card a {
+    color: #006633;
+    font-weight: bold;
+}
+
+/* CONTACT FORM */
+.umu-contact .contact-form {
+    max-width: 750px;
+    background: white;
+    padding: 25px;
+    margin: 30px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 7px rgba(0,0,0,0.12);
+}
+
+.umu-contact .contact-form h2 {
+    color: #006633;
+    text-align: center;
+}
+
+.umu-contact .contact-form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.umu-contact .contact-form input,
+.umu-contact .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 7px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.umu-contact .contact-form button {
+    background: #006633;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 18px;
+    cursor: pointer;
+}
+
+.umu-contact .contact-form button:hover {
+    background: #ffcc00;
+    color: black;
+}
+
+.umu-contact #formStatus {
+    color: #006633;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* MAP */
+.umu-contact .map-section {
+    text-align: center;
+    padding: 25px;
+    background: white;
+}
+
+.umu-contact .map-section h2 {
+    color: #006633;
+}
+
+.umu-contact .map-section iframe {
+    width: 100%;
+    height: 350px;
+    border: 0;
+}
+
+/* FOOTER */
+.umu-contact footer {
+    background: #006633;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    font-weight: bold;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 600px) {
+    .umu-contact .custom-header {
+        flex-direction: column;
+    }
+
+    .umu-contact .header-title h1 {
+        font-size: 20px;
+    }
+
+    .umu-contact .sidenav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .umu-contact .search {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .umu-contact main {
+        padding: 8px;
+    }
+}
+</style>
+
+<div class="umu-contact">
+
+    <!-- HEADER -->
+    <header class="custom-header">
+
+        <img
+            src="<?php echo esc_url(get_theme_file_uri('/images/logo.png')); ?>"
+            class="logo"
+            alt="Uganda Martyrs University Logo"
+        >
+
+        <div class="header-title">
+            <h1>UGANDA MARTYRS UNIVERSITY</h1>
+
+            <div class="contact">
+                Contact: 0700-446-677 / 0777-456-756 / 0767-564-329
+            </div>
+        </div>
+
+        <form class="search" role="search" method="get"
+              action="<?php echo esc_url(home_url('/')); ?>">
+
+            <input type="search"
+                   name="s"
+                   placeholder="Search..."
+                   aria-label="Search">
+
+            <button type="submit">Search</button>
+        </form>
+
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <ul class="sidenav">
+
+            <li><a href="homepage.html">Home</a></li>
+
+            <li><a href="about-us.html">About</a></li>
+
+            <li><a href="gallery.html">Gallery</a></li>
+
+            <li><a class="active"
+                   href="contact.html">Contact</a></li>
+
+            <li><a href="news.html">News</a></li>
+
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <h3 class="article">
+            MOTTO: STRAIN IS TREASURE. ****** SCHOOL WITH DIFFERENCE.
+        </h3>
+
+        <div class="container">
+
+            <h1>Contact Us</h1>
+
+            <p>
+                We would love to hear from you. Contact Uganda Martyrs
+                University for inquiries, admissions and other
+                university services.
+            </p>
+
+        </div>
+
+        <!-- CONTACT INFORMATION -->
+        <section class="contact-info">
+
+            <div class="info-card">
+                <h2>Get in Touch</h2>
+                <p>Reach out to us using the information below.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>📍 Our Location</h3>
+                <p>Nkozi, Mpigi District, Uganda</p>
+            </div>
+
+            <div class="info-card">
+                <h3>✉ Email Address</h3>
+                <p>Visit the official UMU website for the verified contact email.</p>
+                <a href="https://umu.ac.ug/" target="_blank"
+                   rel="noopener noreferrer">Visit UMU Website</a>
+            </div>
+
+            <div class="info-card">
+                <h3>☎ Telephone</h3>
+                <p>Contact the university through its official telephone number.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>🕒 Office Hours</h3>
+                <p>Contact the university to confirm its current office hours.</p>
+            </div>
+
+        </section>
+
+        <!-- CONTACT FORM -->
+        <section class="contact-form">
+
+            <h2>Send Us a Message</h2>
+
+            <p>Fill in the form below with your inquiry.</p>
+
+            <form id="contactForm">
+
+                <label for="name">Full Name</label>
+
+                <input type="text" id="name"
+                       placeholder="Enter your full name" required>
+
+                <label for="email">Email Address</label>
+
+                <input type="email" id="email"
+                       placeholder="Enter your email" required>
+
+                <label for="subject">Subject</label>
+
+                <input type="text" id="subject"
+                       placeholder="Enter the subject" required>
+
+                <label for="message">Your Message</label>
+
+                <textarea id="message" rows="5"
+                          placeholder="Write your message here..."
+                          required></textarea>
+
+                <button type="submit">Send Message</button>
+
+                <p id="formStatus" role="status"></p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- GOOGLE MAP -->
+    <section class="map-section">
+
+        <h2>Find Our Campus</h2>
+
+        <p>
+            Explore the area around Uganda Martyrs University,
+            Nkozi, Uganda.
+        </p>
+
+        <iframe
+            src="https://maps.google.com/maps?q=Uganda%20Martyrs%20University%20Nkozi&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            title="Map showing Uganda Martyrs University">
+        </iframe>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        &copy; <?php echo esc_html(wp_date('Y')); ?>
+        Uganda Martyrs University
+
+        <br>
+
+        ACTA NON VERBA
+
+    </footer>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    const form = document.getElementById("contactForm");
+    const status = document.getElementById("formStatus");
+
+    if (form) {
+
+        form.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            status.textContent =
+            "Demo only: your form is working, but no message has been sent. Connect a backend to receive messages.";
+
+            form.reset();
+
+        });
+
+    }
+
+});
+</script>
+
+<?php get_footer(); ?>

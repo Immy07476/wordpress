@@ -1,0 +1,246 @@
+
+<?php
+/*
+Template Name: Uganda Martyrs University Homepage
+*/
+get_header();
+?>
+
+<style>
+.umu-homepage {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: #f4f4f4;
+    margin: 0;
+}
+
+.umu-header {
+    background: #ff9999;
+    text-align: center;
+    padding: 20px;
+}
+
+.umu-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.umu-header h1 {
+    color: darkgreen;
+    margin: 10px 0;
+}
+
+.umu-header p {
+    font-weight: bold;
+}
+
+.umu-nav {
+    background: #333;
+    padding: 15px;
+    text-align: center;
+}
+
+.umu-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 18px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.umu-nav a:hover {
+    background: yellowgreen;
+    color: black;
+}
+
+.umu-banner {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+}
+
+.umu-banner img {
+    width: 50%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.umu-main {
+    padding: 25px;
+    background: white;
+    margin: 15px;
+}
+
+.umu-main h2 {
+    color: darkgreen;
+    border-bottom: 2px solid yellowgreen;
+    padding-bottom: 8px;
+}
+
+.umu-main img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    margin: 15px 0;
+}
+
+.umu-section {
+    padding: 15px;
+    margin-bottom: 20px;
+    background: #f9f9f9;
+}
+
+.umu-contact {
+    background: #e8f0e8;
+    padding: 20px;
+}
+
+.umu-footer {
+    background: yellowgreen;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .umu-banner {
+        flex-direction: column;
+    }
+
+    .umu-banner img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .umu-nav a {
+        display: block;
+    }
+}
+</style>
+
+<div class="umu-homepage">
+
+    <!-- UNIVERSITY HEADER -->
+    <header class="umu-header">
+        <img class="umu-logo"
+             src="<?php echo esc_url(get_theme_file_uri('images/logo.png')); ?>"
+             alt="Uganda Martyrs University Logo">
+
+        <h1>UGANDA MARTYRS UNIVERSITY</h1>
+
+        <p>Contact: 0700-446-677 / 0777-456-756 / 0767-564-329</p>
+    </header>
+
+    <!-- NAVIGATION MENU -->
+    <nav class="umu-nav">
+        <a href="<?php echo esc_url(home_url('/')); ?>">Home</a>
+        <a href="#history">History</a>
+        <a href="#vision">Vision</a>
+        <a href="#mission">Mission</a>
+        <a href="#values">Core Values</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- BANNER IMAGES -->
+    <div class="umu-banner">
+        <img src="<?php echo esc_url(get_theme_file_uri('images/images (2).jfif')); ?>"
+             alt="Uganda Martyrs University">
+
+        <img src="<?php echo esc_url(get_theme_file_uri('images/images (1).jfif')); ?>"
+             alt="University campus">
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="umu-main">
+
+        <section class="umu-section" id="history">
+            <h2>HISTORY OF UGANDA MARTYRS UNIVERSITY</h2>
+
+            <img src="<?php echo esc_url(get_theme_file_uri('images/images.jfif')); ?>"
+                 alt="Uganda Martyrs University">
+
+            <p>
+                Uganda Martyrs University (UMU) is a private, faith-based
+                university established in 1993 by the Uganda Episcopal
+                Conference. Its main campus is located at Nkozi in Uganda.
+                The university is committed to providing quality higher
+                education, research and community service.
+            </p>
+        </section>
+
+        <section class="umu-section" id="vision">
+            <h2>OUR VISION</h2>
+
+            <p>
+                To be a nationally and internationally recognised university
+                for excellence in teaching, learning, research, advancement
+                of knowledge and community engagement.
+            </p>
+        </section>
+
+        <section class="umu-section" id="mission">
+            <h2>OUR MISSION</h2>
+
+            <p>
+                To provide quality higher education, training and research
+                for the betterment of society, guided by ethical values.
+            </p>
+        </section>
+
+        <section class="umu-section" id="values">
+            <h2>OUR CORE VALUES</h2>
+
+            <ul>
+                <li>Transparency</li>
+                <li>Accountability</li>
+                <li>Reliability</li>
+                <li>Integrity</li>
+                <li>Quality</li>
+                <li>Action based on institutional ethos and values</li>
+            </ul>
+        </section>
+
+        <section class="umu-section">
+            <h2>OUR MOTTO</h2>
+
+            <p>
+                <strong>Virtute et Sapientia Duc Mundum</strong>
+            </p>
+
+            <p>In Virtue and Wisdom, Lead the World.</p>
+        </section>
+
+        <!-- CONTACT INFORMATION -->
+        <section class="umu-contact" id="contact">
+            <h2>CONTACT US</h2>
+
+            <p><strong>Address:</strong> P.O. Box 5498, Kampala, Uganda</p>
+
+            <p><strong>Email:</strong> info@umu.ac.ug</p>
+
+            <p>
+                <strong>Website:</strong>
+                <a href="https://umu.ac.ug/new/" target="_blank"
+                   rel="noopener noreferrer">
+                    www.umu.ac.ug
+                </a>
+            </p>
+
+            <p><strong>Telephone:</strong> 0700-446-677 / 0777-456-756 / 0767-564-329</p>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="umu-footer">
+        <p>&copy; <?php echo esc_html(wp_date('Y')); ?>
+            Uganda Martyrs University. All Rights Reserved.</p>
+
+        <p>ACTA NON VERBA</p>
+    </footer>
+
+</div>
+
+<?php get_footer(); ?>

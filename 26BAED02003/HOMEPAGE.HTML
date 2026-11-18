@@ -1,0 +1,410 @@
+
+<?php
+/*
+Template Name: Uganda Martyrs University Homepage
+*/
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Uganda Martyrs University</title>
+
+<?php wp_head(); ?>
+
+<style>
+
+/* GENERAL STYLING */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* HEADER */
+header {
+    background-color: #ff9999;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+header h1 {
+    color: darkgreen;
+    font-size: 25px;
+}
+
+.contact {
+    text-align: center;
+    font-size: 15px;
+    color: black;
+}
+
+/* SEARCH BAR */
+.search input {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.search button {
+    padding: 10px;
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* NAVIGATION */
+nav {
+    background-color: #333;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.sidenav {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.sidenav li a {
+    display: block;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+}
+
+.sidenav li a:hover,
+.sidenav li a.active {
+    background-color: green;
+}
+
+/* MOTTO */
+.article {
+    background-color: yellowgreen;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+/* WELCOME */
+h3 {
+    text-align: center;
+    color: darkgreen;
+}
+
+.picture {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* SCHOOL INFORMATION */
+.school-info-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.school-info-box {
+    background-color: #99ccff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* PROJECTS */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.project-box {
+    background-color: #99ff99;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.project-box h2 {
+    color: darkgreen;
+}
+
+/* FOOTER */
+footer {
+    color: white;
+    text-align: center;
+    padding: 15px;
+    background-color: yellowgreen;
+    border-radius: 15px;
+    font-size: 15px;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+
+    .school-info-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .school-info-container,
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidenav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+}
+
+</style>
+</head>
+
+<body <?php body_class(); ?>>
+
+<?php wp_body_open(); ?>
+
+<!-- HEADER SECTION -->
+<header>
+
+    <img src="<?php echo esc_url(get_theme_file_uri('images/logo.png')); ?>"
+         class="logo"
+         alt="School Logo">
+
+    <div>
+        <h1>UGANDA MARTYRS UNIVERSITY</h1>
+
+        <div class="contact">
+            Contact: 0700-446-677 /
+            0777-456-756 /
+            0767-564-329
+        </div>
+    </div>
+
+    <!-- SEARCH FORM -->
+    <form class="search"
+          method="get"
+          action="<?php echo esc_url(home_url('/')); ?>">
+
+        <input type="search"
+               name="s"
+               placeholder="Search...">
+
+        <button type="submit">Search</button>
+
+    </form>
+
+</header>
+
+<!-- NAVIGATION MENU -->
+<nav>
+
+    <ul class="sidenav">
+
+        <li>
+            <a class="active" href="<?php echo esc_url(home_url('/')); ?>">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="about-us.html">about us</a>
+        </li>
+
+        <li>
+            <a href="galley.html">Gallery</a>
+        </li>
+
+        <li>
+            <a href="contact.html">Contact</a>
+        </li>
+
+        <li>
+            <a href="news.html">news</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+<!-- MOTTO -->
+<h3 class="article">
+
+    MOTTO: STRAIN IS TREASURE.
+    ****** SCHOOL WITH DIFFERENCE.
+
+</h3>
+
+<!-- WELCOME SECTION -->
+<h3>
+    Welcome to Uganda Martyrs University
+</h3>
+
+<img src="<?php echo esc_url(get_theme_file_uri('images/picture1.jpeg')); ?>"
+     class="picture"
+     alt="Welcome to Uganda Martyrs University">
+
+<!-- SCHOOL INFORMATION -->
+<div class="school-info-container" id="about">
+
+    <div class="school-info-box">
+
+        <p>
+            This university is found in Nkozi,
+            Mpigi District, in the Central Region
+            of Uganda, along the Kampala-Masaka highway.
+        </p>
+
+    </div>
+
+    <div class="school-info-box">
+
+        <p>
+            It is located on Nkozi Hills approximately
+            82 to 85 kilometres southwest of Kampala,
+            near the equator and about 2 kilometres
+            off the main highway at Kayabwe.
+        </p>
+
+    </div>
+
+    <div class="school-info-box">
+
+        <p>
+            We warmly welcome all the new students
+            to this fantastic project at Uganda
+            Martyrs University.
+        </p>
+
+    </div>
+
+    <div class="school-info-box">
+
+        <p>
+            This project was started by a group
+            of creative and innovative students
+            on 26 August 2022. It has positively
+            impacted students who have joined it.
+        </p>
+
+    </div>
+
+</div>
+
+<!-- STUDENT PROJECTS -->
+<h3>OUR STUDENT PROJECTS</h3>
+
+<div class="projects-container">
+
+    <div class="project-box">
+
+        <h2>PROJECT 1</h2>
+
+        <p>
+            This project is aimed at providing
+            a platform for students to learn and
+            practise their skills in mechanical
+            machinery and repair for those in
+            Mechanical Engineering.
+        </p>
+
+    </div>
+
+    <div class="project-box">
+
+        <h2>PROJECT 2</h2>
+
+        <p>
+            Computer repair for IT students.
+        </p>
+
+    </div>
+
+    <div class="project-box">
+
+        <h2>PROJECT 3</h2>
+
+        <p>
+            Bakery for students in Catering.
+        </p>
+
+    </div>
+
+    <div class="project-box">
+
+        <h2>PROJECT 4</h2>
+
+        <p>
+            Counselling and Guidance.
+        </p>
+
+    </div>
+
+    <div class="project-box">
+
+        <h2>PROJECT 5</h2>
+
+        <p>
+            Fashion for students in Fashion and Design.
+        </p>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer id="contact">
+
+    &copy; 2026 Uganda Martyrs University
+
+    <br>
+
+    ACTA NON VERBA
+
+</footer>
+
+<?php wp_footer(); ?>
+
+</body>
+</html>

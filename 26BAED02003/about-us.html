@@ -1,0 +1,455 @@
+
+<?php
+/*
+Template Name: Uganda Martyrs University Homepage
+*/
+?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+
+<head>
+<meta charset="<?php bloginfo('charset'); ?>">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Uganda Martyrs University</title>
+
+<?php wp_head(); ?>
+
+<style>
+
+/* GENERAL DESIGN */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* HEADER */
+header {
+    background-color: #ff9999;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.logo {
+    width: 60px;
+    height: 50px;
+    object-fit: contain;
+}
+
+header h1 {
+    color: darkgreen;
+    font-size: 26px;
+}
+
+.contact {
+    text-align: center;
+    font-size: 15px;
+    color: black;
+}
+
+/* SEARCH */
+.search input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search button {
+    padding: 10px;
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* NAVIGATION */
+nav {
+    background-color: #333;
+    margin-top: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: inline-block;
+}
+
+nav a:hover,
+nav a.active {
+    background-color: green;
+}
+
+/* UNIVERSITY BANNER */
+.banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.banner img {
+    object-fit: cover;
+    border-radius: 10px;
+    max-height: 300px;
+}
+
+.banner .image-one {
+    width: 55%;
+}
+
+.banner .image-two {
+    width: 40%;
+}
+
+.university-motto {
+    background-color: #e6e6e6;
+    padding: 15px;
+    border-radius: 8px;
+    color: darkgreen;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.english-motto {
+    text-align: right;
+    margin-top: -10px;
+    font-style: italic;
+    color: #333;
+}
+
+/* MAIN CONTENT */
+.container {
+    width: 95%;
+    margin: 20px auto;
+}
+
+/* SECTIONS */
+section {
+    background-color: #ffffff;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-left: 6px solid yellowgreen;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+section h2 {
+    color: darkgreen;
+    border-bottom: 2px solid yellowgreen;
+    padding-bottom: 10px;
+}
+
+section p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* UNIVERSITY PICTURE */
+.middle-picture {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* CORE VALUES */
+.values-list {
+    line-height: 2;
+    font-size: 16px;
+}
+
+/* CONTACT LINKS */
+section a {
+    color: darkgreen;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    color: white;
+    text-align: center;
+    padding: 15px;
+    background-color: yellowgreen;
+    border-radius: 15px;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+    }
+
+    .banner {
+        flex-direction: column;
+    }
+
+    .banner .image-one,
+    .banner .image-two {
+        width: 100%;
+    }
+
+    .middle-picture {
+        height: 300px;
+    }
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+}
+
+</style>
+</head>
+
+<body <?php body_class(); ?>>
+
+<?php wp_body_open(); ?>
+
+<!-- HEADER SECTION -->
+<header>
+
+    <img src="<?php echo esc_url(get_theme_file_uri('images/logo.png')); ?>"
+         class="logo"
+         alt="School Logo">
+
+    <div>
+
+        <h1>UGANDA MARTYRS UNIVERSITY</h1>
+
+        <div class="contact">
+            Contact: 0700-446-677 /
+            0777-456-756 /
+            0767-564-329
+        </div>
+
+    </div>
+
+    <!-- SEARCH FORM -->
+    <form class="search"
+          method="get"
+          action="<?php echo esc_url(home_url('/')); ?>">
+
+        <input type="search"
+               name="s"
+               placeholder="Search...">
+
+        <button type="submit">Search</button>
+
+    </form>
+
+</header>
+
+<!-- MAIN NAVIGATION -->
+<nav>
+
+    <a class="active" href="<?php echo esc_url(home.html); ?>">Home</a>
+
+    <a href="history">History</a>
+
+    <a href="vision">Vision</a>
+
+    <a href="mission">Mission</a>
+
+    <a href="values">Core Values</a>
+
+    <a href="motto">Motto</a>
+
+    <a href="contact.html">Contact</a>
+
+</nav>
+
+<!-- UNIVERSITY BANNER -->
+<div class="banner">
+
+    <img src="<?php echo esc_url(get_theme_file_uri('images/images (2).jfif')); ?>"
+         class="image-one"
+         alt="Uganda Martyrs University">
+
+    <img src="<?php echo esc_url(get_theme_file_uri('images/images (1).jfif')); ?>"
+         class="image-two"
+         alt="University campus">
+
+</div>
+
+<div class="university-motto">
+
+    <p>Virtute et Sapientia Duc Mundum</p>
+
+    <p class="english-motto">
+        In Virtue and Wisdom, Lead the World
+    </p>
+
+</div>
+
+<!-- UNIVERSITY INFORMATION -->
+<div class="container">
+
+    <!-- HISTORY -->
+    <section id="history">
+
+        <h2>Our History</h2>
+
+        <p>
+            Uganda Martyrs University (UMU) is a private,
+            faith-based university established in 1993 by
+            the Uganda Episcopal Conference. The university
+            is committed to providing quality higher education,
+            research, and training guided by ethical values.
+            Its main campus is located in Nkozi, Uganda.
+        </p>
+
+    </section>
+
+    <!-- VISION -->
+    <section id="vision">
+
+        <h2>Our Vision</h2>
+
+        <p>
+            To be a university that is nationally and
+            internationally recognized for excellence in
+            teaching, learning, research, advancement of
+            knowledge, and community engagement.
+        </p>
+
+    </section>
+
+    <!-- UNIVERSITY IMAGE -->
+    <img src="<?php echo esc_url(get_theme_file_uri('images/images.jfif')); ?>"
+         class="middle-picture"
+         alt="Uganda Martyrs University campus">
+
+    <!-- MISSION -->
+    <section id="mission">
+
+        <h2>Our Mission</h2>
+
+        <p>
+            To provide quality higher education, training,
+            and research for the betterment of society,
+            guided by ethical values.
+        </p>
+
+    </section>
+
+    <!-- CORE VALUES -->
+    <section id="values">
+
+        <h2>Our Core Values</h2>
+
+        <div class="values-list">
+
+            <p>1. Transparency</p>
+
+            <p>2. Accountability</p>
+
+            <p>3. Reliability</p>
+
+            <p>4. Integrity</p>
+
+            <p>5. Quality</p>
+
+            <p>6. Action based on institutional ethos and values</p>
+
+        </div>
+
+    </section>
+
+    <!-- MOTTO -->
+    <section id="motto">
+
+        <h2>Our Motto</h2>
+
+        <p>
+            <strong>Virtute et Sapientia Duc Mundum</strong>
+        </p>
+
+        <p>
+            In Virtue and Wisdom, Lead the World.
+        </p>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <h2>Contact Us</h2>
+
+        <p>Address: P.O. Box 5498, Kampala, Uganda</p>
+
+        <p>Email: info@umu.ac.ug</p>
+
+        <p>
+            Website:
+            <a href="https://umu.ac.ug/new/" target="_blank">
+                Uganda Martyrs University
+            </a>
+        </p>
+
+        <p>
+            Telephone: 0700-446-677 /
+            0777-456-756 /
+            0767-564-329
+        </p>
+
+    </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+
+    &copy; 2026 Uganda Martyrs University
+
+    <br>
+
+    ACTA NON VERBA
+
+</footer>
+
+<?php wp_footer(); ?>
+
+</body>
+</html>
